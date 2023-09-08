@@ -15,6 +15,7 @@ import {
   SendDataContext,
   SendDataContextProvider,
 } from "../context/sendDataContext";
+import Practice from "../layout/Practice";
 // import { DashboardScorecardApi } from "../components/Common";
 
 const DashBoardPage = () => {
@@ -415,7 +416,7 @@ const DashBoardPage = () => {
   };
 
   return (
-    <PageLayout>
+    <Practice>
       <div className="row">
         <div className="col-lg-12">
           <SendDataContextProvider>
@@ -438,7 +439,7 @@ const DashBoardPage = () => {
           </SendDataContextProvider>
         </div>
       </div>
-    </PageLayout>
+    </Practice>
   );
 };
 

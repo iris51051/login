@@ -5,6 +5,7 @@ import google from "../img/logo_google_w.png";
 import naver from "../img/logo_naver.svg";
 import { useForm } from "antd/es/form/Form";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginModal = ({ isModalOpen, handleOk }) => {
   const [form] = Form.useForm();
@@ -13,6 +14,7 @@ const LoginModal = ({ isModalOpen, handleOk }) => {
   const [recoverForm, setRecoverForm] = useState("");
   const [loginError, setLoginError] = useState(false);
   // const [isResetButtonDisabled, setIsResetButtonDisabled] = useState(true);
+  const navigate = useNavigate();
 
   const initialValue = {
     remember: "true",
@@ -82,6 +84,7 @@ const LoginModal = ({ isModalOpen, handleOk }) => {
       okText="Log In"
       footer={null}
       closable={false}
+      zIndex={2000}
     >
       <Form
         id="loginform"
@@ -203,7 +206,12 @@ const LoginModal = ({ isModalOpen, handleOk }) => {
           <div className="text-center">
             <p>
               Need a Growth Platform account?
-              <a className="t-blue t-line m-l-5">Create an account</a>
+              <a
+                className="t-blue t-line m-l-5"
+                onClick={() => navigate("/register")}
+              >
+                Create an account
+              </a>
             </p>
           </div>
         </div>

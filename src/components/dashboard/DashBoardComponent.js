@@ -701,11 +701,11 @@ export const PerformanceIndicator = ({
     defaultSelectedOptions
   );
 
-  // useEffect(() => {
-  //   fetchData()
-  //     .then((responseData) => console.log(responseData))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    fetchData()
+      .then((responseData) => console.log(responseData))
+      .catch((error) => console.log(error));
+  }, []);
 
   async function fetchData() {
     try {
@@ -887,7 +887,7 @@ export const PerformanceIndicator = ({
       // }
 
       // return { diffData, tgtData, sparklineData, indicator };
-      return 0;
+      return "test";
     } catch (error) {
       throw error;
     }
@@ -1005,7 +1005,7 @@ export const TabContent = () => {
         <div className="white-box">
           <div className="bg-white">
             <h3 className="box-title pb10">기간별 광고 비용 추세</h3>
-            <div>
+            <div className="custom-radio">
               <div className="fl">
                 <Radio.Group
                   value={indicatorSelector1}

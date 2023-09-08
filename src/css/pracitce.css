@@ -1,0 +1,22 @@
+.ant-layout-sider-dark {
+  min-width: 240px !important;
+  background-color: #001529;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navbar-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+.navbar-left > li > a {
+  padding: 0 14px;
+  line-height: 60px;
+  min-height: 60px;
+}
+.container-fluid {
+  padding-left: 25px !important;
+  padding-right: 25px;
+  padding-bottom: 15px;
+}

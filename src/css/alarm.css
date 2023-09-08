@@ -1,0 +1,125 @@
+fl {
+  float: left !important;
+}
+fr {
+  float: right !important;
+}
+.ant-table-wrapper .ant-table thead > tr > th {
+  border-bottom: 1px solid #000;
+}
+.custom_table {
+  width: 100%;
+  /* border-collapse: collapse; */
+  /* margin-top: 20px; */
+  margin-bottom: 30px;
+}
+
+.custom_table th {
+  padding: 8px 10px !important;
+  font-weight: 700;
+  /* border-bottom: 1px solid #e8e8e8 !important;
+  border-top: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8; */
+  border: 1px solid #e8e8e8;
+  background: #f3f4f6 !important;
+  width: 150px;
+  text-align: left;
+}
+
+.custom_table td {
+  padding: 8px 10px !important;
+  text-align: left;
+  /* border-bottom: 1px solid #e8e8e8;
+  border-top: 1px solid #e8e8e8;
+  border-right: 1px solid #e8e8e8; */
+  border: 1px solid #e8e8e8;
+  font-weight: normal;
+}
+
+/* .custom_table td:last-child {
+  border-right: none;
+} */
+
+.custom_table .ant-input {
+  font-size: 12px;
+  border-radius: 0;
+}
+.ant-modal .ant-modal-content {
+  padding: 0px 0px;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px 20px;
+}
+
+.ant-modal-body {
+  padding: 15px 20px;
+}
+
+.ant-modal-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 15px 20px;
+}
+.ant-btn-primary {
+  background-color: #41b3f9;
+  border-radius: 3px;
+}
+.ant-btn-default {
+  border-radius: 3px;
+}
+#recipient_reg_div > div:last-child .plus-btn {
+  display: block !important;
+}
+.custom_table .ant-checkbox-wrapper {
+  font-size: 12px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #41b3f9;
+  border-color: #41b3f9;
+}
+
+.importance .ant-radio-button-wrapper {
+  border: 0px;
+}
+.importance .ant-radio-button-wrapper:not(:first-child)::before {
+  background-color: #fff;
+}
+.face-active {
+  border: 2px solid black;
+  border-radius: 50%;
+  background-color: #000;
+}
+.etiquette .ant-slider-track {
+  background: linear-gradient(to right, #41b3f9, #4ed8ba);
+}
+
+.condition-list .ant-radio {
+  opacity: 0;
+}
+.target-center > a:last-child {
+  border-bottom: 0px;
+}
+.selected-target::-webkit-scrollbar {
+  width: 0;
+}
+.target-modal .ant-modal-header {
+  background: #41b3f9;
+}
+.target-modal .ant-modal-header .ant-modal-title {
+  color: #fff;
+}
+.target-modal .ant-modal-close-x {
+  color: #fff;
+}
+.target-modal .ant-modal-footer {
+  text-align: center;
+}
+.target-modal .ant-input-affix-wrapper {
+  padding: 11px 20px 12px;
+  border: 0px;
+}
+.target-modal .ant-input:focus {
+  border-color: #fff;
+}

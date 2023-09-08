@@ -188,6 +188,7 @@ export const MyChartLinePeriod = ({ indicatorSelector }) => {
       name: item.name,
       type: "line",
       smooth: true,
+      // stack: item.name === "평균 노출수" ? false : true,
       data: item.value,
       symbol: "circle",
       symbolSize: item.name === "평균 노출수" ? 0 : 6,

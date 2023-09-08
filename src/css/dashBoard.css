@@ -325,7 +325,7 @@ table.dataTable {
   max-width: none !important;
   border-collapse: separate !important;
 }
-table > tbody > tr > th {
+table.dataTable > tbody > tr > th {
   border-top: 1px solid #e4e7ea;
   border-bottom: 1px solid #e4e7ea;
   padding: 8px !important;
@@ -334,7 +334,7 @@ table > tbody > tr > th {
   font-size: 13px;
   font-weight: 600;
 }
-table > tbody > tr > td {
+table.dataTable > tbody > tr > td {
   border-top: 1px solid #e4e7ea;
   padding: 8px !important;
   vertical-align: middle;
@@ -438,24 +438,27 @@ td > .ant-btn-group > .ant-btn:hover {
 .fr {
   float: right !important;
 }
-.ant-radio-group > .ant-radio-button-wrapper-checked {
+.custom-radio .ant-radio-group > .ant-radio-button-wrapper-checked {
   z-index: 1;
   color: #ffffff;
   background: #41b3f9;
   border-color: #41b3f9;
 }
-.ant-radio-group > .ant-radio-button-wrapper-checked:nth-child(n) {
+.custom-radio
+  .ant-radio-group
+  > .ant-radio-button-wrapper-checked:nth-child(n) {
   border-color: #41b3f9;
 }
-.ant-radio-group > .ant-radio-button-wrapper-checked:hover {
+.custom-radio .ant-radio-group > .ant-radio-button-wrapper-checked:hover {
   color: #ffffff;
 }
-.ant-radio-group
+.custom-radio
+  .ant-radio-group
   > .ant-radio-button-wrapper:not(.ant-radio-button-wrapper-checked):hover {
   background: #e4e7ea;
   color: rgba(0, 0, 0, 0.88);
 }
-.ant-radio-button-wrapper {
+.custom-radio .ant-radio-button-wrapper {
   font-size: 12px;
 }
 .chart-container {
