@@ -58,6 +58,16 @@ const data = [
   },
 ];
 
+
+//24시간,분
+const timeOptions = {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false,
+};
+//위의 옵션에 따른 시간 지정
+const currentTime = new Date().toLocaleTimeString("ko-KR",timeOptions)
+
 const HistoryPage = () => {
   const [value1, setValue1] = useState("basic");
   const [stateFilter, setStateFilter] = useState([]);
@@ -70,7 +80,7 @@ const HistoryPage = () => {
   const onFinish = (values) => {
     setAlarmHistory([
       {
-        time: "2023-08-21 16:50",
+        time: currentTime,
         importance: "comment",
         content: values.comments,
         name: "서혜정",
