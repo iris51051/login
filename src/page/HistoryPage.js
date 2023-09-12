@@ -8,6 +8,7 @@ import {
   Tabs,
   Form,
 } from "antd";
+import dayjs from 'dayjs';
 import React, { useState } from "react";
 import Practice from "../layout/Practice";
 import {
@@ -59,14 +60,7 @@ const data = [
 ];
 
 
-//24시간,분
-const timeOptions = {
-  hour: '2-digit',
-  minute: '2-digit',
-  hour12: false,
-};
-//위의 옵션에 따른 시간 지정
-const currentTime = new Date().toLocaleTimeString("ko-KR",timeOptions)
+
 
 const HistoryPage = () => {
   const [value1, setValue1] = useState("basic");
@@ -77,10 +71,13 @@ const HistoryPage = () => {
   const onChange1 = ({ target: { value } }) => {
     setValue1(value);
   };
+  //24시간,분
+  const now = dayjs(); // 현재 날짜 및 시간 가져오기
+  const formatted = now.format('YYYY-MM-DD HH:mm')
   const onFinish = (values) => {
     setAlarmHistory([
       {
-        time: currentTime,
+        time: formatted,
         importance: "comment",
         content: values.comments,
         name: "서혜정",
