@@ -69,7 +69,6 @@ const SelectTargetModal = ({
   const handleSave = () => {
     setTargetList([...checkedList]);
     handleClose();
-    console.log("checkedlist", checkedList);
   };
   const handleReset = () => {
     if (targetList.length === 0) {

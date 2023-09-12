@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { SparkLine } from "./Chart";
 import { FaChevronCircleRight, FaCaretUp, FaCaretDown } from "react-icons/fa";
+import { DatePicker } from "antd";
+import dayjs from "dayjs";
 import { format } from "date-fns";
 import fetchData from "../api/DataFetch";
 
+const { RangePicker } = DatePicker;
 export function makeToLimitDigitsString(number, fraction = 0) {
   let result;
 
@@ -191,3 +194,51 @@ export function useApi(sendData, indicator) {
 
   return console.log(sendData, indicator);
 }
+
+export const Calendar = ({ value, onChange }) => {
+  const rangePresets = [
+    { label: "어제", value: [dayjs().add(-1, "d"), dayjs().add(-1, "d")] },
+    {
+      label: "최근 7일",
+      value: [dayjs().add(-7, "d"), dayjs().add(-1, "d")],
+    },
+    {
+      label: "최근 30일",
+      value: [dayjs().add(-30, "d"), dayjs().add(-1, "d")],
+    },
+    {
+      label: "최근 90일",
+      value: [dayjs().add(-90, "d"), dayjs().add(-1, "d")],
+    },
+    {
+      label: "이번 달",
+      value: [dayjs().startOf("month"), dayjs().add(-1, "d")],
+    },
+    {
+      label: "지난 달",
+      value: [
+        dayjs().subtract(1, "month").startOf("month"),
+        dayjs().subtract(1, "month").endOf("month"),
+      ],
+    },
+    {
+      label: "이번 년도",
+      value: [dayjs().startOf("year"), dayjs().add(-1, "d")],
+    },
+    {
+      label: "지난 년도",
+      value: [
+        dayjs().subtract(1, "year").startOf("year"),
+        dayjs().subtract(1, "year").endOf("year"),
+      ],
+    },
+  ];
+  return (
+    <RangePicker
+      value={value}
+      onChange={onChange}
+      presets={[...rangePresets]}
+      format="YYYY/MM/DD"
+    />
+  );
+};

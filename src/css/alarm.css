@@ -123,3 +123,38 @@ fr {
 .target-modal .ant-input:focus {
   border-color: #fff;
 }
+.ant-timeline.ant-timeline-label .ant-timeline-item-label {
+  width: 0;
+}
+.ant-timeline.ant-timeline-label .ant-timeline-item-tail,
+.ant-timeline.ant-timeline-label .ant-timeline-item-head {
+  inset-inline-start: 5%;
+}
+.ant-timeline .ant-timeline-item {
+  padding-bottom: 40px;
+}
+.ant-timeline.ant-timeline-label
+  .ant-timeline-item-left
+  .ant-timeline-item-content {
+  inset-inline-start: 7%;
+  width: calc(92% - 12px);
+}
+/* :where(.css-dev-only-do-not-override-19gw05y).ant-timeline
+  .ant-timeline-item-content {
+
+} */
+.nav::before {
+  content: " ";
+}
+.ant-radio-button-wrapper:first-child,
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0%;
+}
+/* .ant-radio-group-solid .ant-radio-button-wrapper-checked {
+  background: #41b3f9;
+  border-color: #41b3f9;
+} */
+.statefilter-checked {
+  background: #41b3f9;
+  color: #fff;
+}

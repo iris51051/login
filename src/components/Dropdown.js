@@ -889,3 +889,35 @@ export const ManageDropdown = () => {
     </Dropdown>
   );
 };
+
+export const AlarmCommentDropdown = () => {
+  const items = [
+    {
+      label: "삭제",
+      key: "1",
+      onClick: () => {
+        Swal.fire({
+          icon: "warning",
+          title: "정말 삭제하시겠습니까?",
+          text: "삭제 버튼을 클릭하면 영구적으로 삭제됩니다.",
+          confirmButtonText: "삭제",
+          confirmButtonColor: "rgb(221, 107, 85)",
+          showCancelButton: true,
+          cancelButtonText: "취소",
+        });
+      },
+    },
+  ];
+  return (
+    <Dropdown
+      trigger={["click"]}
+      placement="bottomRight"
+      overlayStyle={{ minWidth: "100px" }}
+      menu={{ items }}
+    >
+      <Button size="small">
+        <HiMiniCog6Tooth />
+      </Button>
+    </Dropdown>
+  );
+};

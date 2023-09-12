@@ -11,7 +11,7 @@ import {
 } from "../components/Dropdown";
 import IconDisplay from "../components/IconDisplay";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const { Header, Sider, Content } = Layout;
 
@@ -122,6 +122,18 @@ const NavBar = ({ openClose, collapsed }) => {
 
 const Sidebar = ({ collapsed }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const [selectedMenuItem, setSelectedMenuItem] = useState("3-2");
+  // localStorage.getItem("selectedMenuItem")
+  useEffect(() => {
+    setSelectedMenuItem(selectedMenuItem);
+  }, [currentPath]);
+  const [openKeys, setOpenKeys] = useState([]);
+  const handleMenuClick = (menuItem) => {
+    setSelectedMenuItem(menuItem.key);
+    // console.log(menuItem);
+  };
   const [sideMenu, setSideMenu] = useState([]);
   const [openSubmenu, setOpenSubmenu] = useState(null);
   const isOpen =
@@ -219,8 +231,12 @@ const Sidebar = ({ collapsed }) => {
           <Menu
             theme="dark"
             mode="inline"
-            defaultSelectedKeys={["1"]}
             style={{ height: "100vh", width: "240px" }}
+            defaultSelectedKeys={selectedMenuItem}
+            // selectedKeys={selectedMenuItem}
+            // openKeys={openKeys}
+            // onOpenChange={setOpenKeys}
+            onClick={handleMenuClick}
             // items={sideMenuItems}
             items={[
               {
@@ -231,7 +247,9 @@ const Sidebar = ({ collapsed }) => {
               {
                 key: "2",
                 // icon: <IconDisplay iconName="mdi-av-timer" />,
+                // label: <Link to="/alarm_history">알림 히스토리</Link>,
                 label: "알림 히스토리",
+                onClick: () => navigate("/alarm_history"),
                 style: { paddingLeft: 20 },
               },
               {
@@ -240,11 +258,24 @@ const Sidebar = ({ collapsed }) => {
                 children: [
                   {
                     key: "3-1",
+                    // label: (
+                    //   <Link
+                    //     to="/alarm_setting"
+                    //     style={{ textDecoration: "none" }}
+                    //   >
+                    //     알림 목록 및 설정
+                    //   </Link>
+                    // ),
                     label: "알림 목록 및 설정",
-                    onClick: () => navigate("alarm_setting"),
+                    onClick: () => navigate("/alarm_setting"),
                   },
                   {
                     key: "3-2",
+                    // label: (
+                    //   <Link to="/" style={{ textDecoration: "none" }}>
+                    //     알림 수신자 설정
+                    //   </Link>
+                    // ),
                     label: "알림 수신자 설정",
                     onClick: () => navigate("/"),
                   },
@@ -358,14 +389,16 @@ const Sidebar = ({ collapsed }) => {
 };
 
 const Main = ({ collapsed, children }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   return (
     <div
       id="page-wrapper"
       className="body-gray"
       style={{
         minHeight: "902px",
-        // background: "#edf1f5",
-        background: "fff",
+        background: currentPath === "/dashboard" ? "#edf1f5" : "#fff",
         marginTop: "60px",
         margin: collapsed ? "60px 0px 0px 0px" : "60px 0 0px 240px",
       }}

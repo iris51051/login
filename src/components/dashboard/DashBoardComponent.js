@@ -6,7 +6,12 @@ import "./../../css/dashBoard.css";
 import { MyChartLinePeriod, MyMixChart, SparkLine } from "../Chart";
 import axios from "axios";
 import fetchData from "../../api/DataFetch";
-import { addDaysToDate, makeToLimitDigitsString, useApi } from "../Common";
+import {
+  Calendar,
+  addDaysToDate,
+  makeToLimitDigitsString,
+  useApi,
+} from "../Common";
 import { SendDataContext } from "../../context/sendDataContext";
 import { is } from "date-fns/locale";
 
@@ -561,12 +566,13 @@ export const FilterOption = ({
           </div>
         </div>
         <div className="col-md-2">
-          <RangePicker
+          {/* <RangePicker
             value={dateRange}
             onChange={onRangeChange}
             presets={[...rangePresets]}
             format="YYYY/MM/DD"
-          />
+          /> */}
+          <Calendar value={dateRange} onChange={onRangeChange} />
         </div>
         <div className="col-md-1">
           <Button

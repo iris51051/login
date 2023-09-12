@@ -137,6 +137,7 @@ const LoginModal = ({ isModalOpen, handleOk }) => {
        */}
       {loginDisplay === "block" ? (
         <div
+          className="loginmodal-footer"
           style={{
             display: "flex",
             flexDirection: "column",

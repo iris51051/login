@@ -30,10 +30,7 @@ const NewAlarm = () => {
   const [radioValue, setRadioValue] = useState();
   const handleRadioChange = (e) => setRadioValue(e.target.value);
   const [targetList, setTargetList] = useState([]);
-  // const updateTargetList = (updatedData) => {
-  //   setTargetList(updatedData);
-  //   console.log(updatedData);
-  // };
+
   const options = [
     { label: "이메일 받기", value: "email" },
     { label: "카카오톡으로 알림 받기", value: "kakao" },
@@ -100,16 +97,15 @@ const NewAlarm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showTargetModal = () => setIsModalOpen(true);
   const handleClose = () => {
-    // console.log(targetList);
     setIsModalOpen(false);
   };
 
   const onFinish = (values) => {
     // submit
+    values.target = targetList;
     console.log(values);
   };
 
-  console.log(targetList);
   return (
     <Practice>
       <div
@@ -148,7 +144,7 @@ const NewAlarm = () => {
           <Form
             form={form}
             onFinish={onFinish}
-            // initialValues={{ target: { targetList } }}
+            // initialValues={{ target: targetList }}
           >
             <table className="custom_table font12">
               <colgroup>
@@ -272,6 +268,7 @@ const NewAlarm = () => {
                         />
                         <Form.Item
                           name="target"
+                          // initialValue={targetList}
                           // value={targetList}
                           valuePropName="target"
                           style={{ marginBottom: 0 }}
@@ -280,6 +277,7 @@ const NewAlarm = () => {
                             style={{ width: "60%" }}
                             onClick={showTargetModal}
                             value={targetList}
+                            // value={["1", "2", "3", "4"]}
                           />
                         </Form.Item>
                       </td>
